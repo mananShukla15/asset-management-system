@@ -8,17 +8,18 @@ import {isValidPassword} from "../functions/validPassword";
 import {isValidEmail} from "../functions/isValidEmail.ts";
 import mailOTP from "../functions/mailOTP.ts";
 import {hashPassword} from "../functions/hashPassword.ts";
+// @ts-ignore
 import redisClient from "../../redisConfig.ts";
 import {executeQuery, handleError, handleSuccess} from "../functions/requestResponse.ts";
 
 dotenv.config()
 
-const generateToken = (payload: JwtPayload,time:string) => {
-    const secretKey: string = process.env.ACCESS_TOKEN_SECRET ?? ""; // Replace with your own secret key
+const generateToken = (payload: JwtPayload,time:number) => {
+    const secretKey: string = process.env.ACCESS_TOKEN_SECRET ?? "secret_key_of_jwt";
     const options = {
-        expiresIn: time,
+        expiresIn: Number(time),
     };
-    return jwt.sign(payload, secretKey, options);
+    return jwt.sign(payload, secretKey, options as jwt.SignOptions);
 };
 
 const storeOTP = async (key: string, otp: number): Promise<void> => {
@@ -81,7 +82,7 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
     };
     await storeOTP(username, otp);
     await redisClient.setEx(`tempUser:${username}`, 300, JSON.stringify(tempUser));
-    let token:string = generateToken({username:username},'24h')
+    let token:string = generateToken({username:username},86400)
     await mailOTP(otp,email,"OTP verification")
     res.status(200).json({OTPtoken:token});
 };
@@ -103,7 +104,7 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
         return
     }
     let payload: JwtPayload = {id: user.id}
-    let token: string = generateToken(payload,'24h')
+    let token: string = generateToken(payload,86400)
     res.status(200).json({token: token});
     return;
 };

@@ -1,5 +1,5 @@
-import fetchUserRoles from '../functions/fetchUserRoles.ts'
-import IAsset, {IUser} from "../functions/interface.ts";
+import fetchUserRoles from '../functions/fetchUserRoles'
+import IAsset, {IUser} from "../functions/interface";
 import {
     assetAssignApi,
     assetPendingApi,
@@ -11,9 +11,9 @@ import {
     getAllUsersApi,
     getRolesApi,
     updateAssetApi
-} from "../functions/api.ts";
-import {executeDeleteApi, executeGetApi, executePostApi, executePutApi} from "./apiExecution.ts";
-import {isTokenAvailableOrNot, logout} from "../functions/helperFunctions.ts";
+} from "../functions/api";
+import {executeDeleteApi, executeGetApi, executePostApi, executePutApi} from "./apiExecution";
+import {isTokenAvailableOrNot, logout} from "../functions/helperFunctions";
 
 const logoutButton: HTMLElement = document.getElementById("logout")!;
 

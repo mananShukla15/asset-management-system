@@ -1,10 +1,10 @@
-import fetchUserRoles from '../functions/fetchUserRoles.ts'
-import {IBodyStructureForUserAPI, IUser} from "../functions/interface.ts";
-import {createUserViaAdminApi, deleteUserApi} from "../functions/api.ts";
-import {executeDeleteApi, executePostApi} from "./apiExecution.ts";
-import {createTable} from "./tables.ts";
-import {users} from "../functions/getUsers.ts";
-import {isTokenAvailableOrNot, logout} from "../functions/helperFunctions.ts";
+import fetchUserRoles from '../functions/fetchUserRoles'
+import {IBodyStructureForUserAPI, IUser} from "../functions/interface";
+import {createUserViaAdminApi, deleteUserApi} from "../functions/api";
+import {executeDeleteApi, executePostApi} from "./apiExecution";
+import {createTable} from "./tables";
+import {users} from "../functions/getUsers";
+import {isTokenAvailableOrNot, logout} from "../functions/helperFunctions";
 
 isTokenAvailableOrNot()
 const logoutElement: HTMLElement = document.getElementById("logout")!;

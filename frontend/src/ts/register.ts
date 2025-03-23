@@ -1,6 +1,6 @@
-import {IBodyStructureForUserAPI} from "../functions/interface.ts";
-import {signupApi} from "../functions/api.ts";
-import {executePostApi} from "./apiExecution.ts";
+import {IBodyStructureForUserAPI} from "../functions/interface";
+import {signupApi} from "../functions/api";
+import {executePostApi} from "./apiExecution";
 const commonHeaders  : HeadersInit =  {
     "Content-Type": "application/json",
     "Access-Control-Origin": "*"

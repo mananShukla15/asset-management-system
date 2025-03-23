@@ -1,6 +1,6 @@
-import {IForgetPassword, IForgetPasswordToken} from "../functions/interface.ts";
-import {forgetPasswordApi} from "../functions/api.ts";
-import {executePostApi} from "./apiExecution.ts";
+import {IForgetPassword, IForgetPasswordToken} from "../functions/interface";
+import {forgetPasswordApi} from "../functions/api";
+import {executePostApi} from "./apiExecution";
 
 const commonHeaders  : HeadersInit =  {
     "Content-Type": "application/json",

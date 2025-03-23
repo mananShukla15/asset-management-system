@@ -1,6 +1,6 @@
-import {IBodyStructureForAPI, ILoginToken} from "../functions/interface.ts";
-import {loginApi} from "../functions/api.ts";
-import {executePostApi} from "./apiExecution.ts";
+import {IBodyStructureForAPI, ILoginToken} from "../functions/interface";
+import {loginApi} from "../functions/api";
+import {executePostApi} from "./apiExecution";
 const commonHeaders  : HeadersInit =  {
     "Content-Type": "application/json",
     "Access-Control-Origin": "*"
@@ -26,7 +26,10 @@ const loginForm : HTMLFormElement = <HTMLFormElement>document.getElementById('lo
 loginForm.addEventListener("submit", async (e: Event): Promise<void> => {
     e.preventDefault();
     const formData: FormData = new FormData(loginForm);
-    const formValues : { [k:string] : FormDataEntryValue } = Object.fromEntries(formData);
+    const formValues:{ [k: string]: FormDataEntryValue } = {};
+    formData.forEach((value,key)=>{
+        formValues[key] = value;
+    })
     const body : IBodyStructureForAPI = {
         username:formValues.username,
         password:formValues.password

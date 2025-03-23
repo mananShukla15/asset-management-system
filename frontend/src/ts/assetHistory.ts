@@ -1,8 +1,8 @@
-import fetchUserRoles from '../functions/fetchUserRoles.ts'
-import {IAssetHistory} from "../functions/interface.ts";
-import {assetHistoryApi} from "../functions/api.ts";
-import {executeGetApi} from "./apiExecution.ts";
-import {createTable} from "./tables.ts";
+import fetchUserRoles from '../functions/fetchUserRoles'
+import {IAssetHistory} from "../functions/interface";
+import {assetHistoryApi} from "../functions/api";
+import {executeGetApi} from "./apiExecution";
+import {createTable} from "./tables";
 import {emptyFunction, isTokenAvailableOrNot, logout} from "../functions/helperFunctions.ts";
 
 const logoutElement:HTMLElement = document.getElementById("logout")!;

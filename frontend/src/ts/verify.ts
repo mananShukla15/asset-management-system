@@ -1,5 +1,5 @@
-import {verifyUserViaOtpApi} from "../functions/api.ts";
-import {executePostApi} from "./apiExecution.ts";
+import {verifyUserViaOtpApi} from "../functions/api";
+import {executePostApi} from "./apiExecution";
 
 if(!localStorage.getItem("OTPtoken")){
     location.href='../html/register.html'

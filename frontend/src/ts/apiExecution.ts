@@ -1,4 +1,4 @@
-import {headers} from "../functions/api.ts";
+import {headers} from "../functions/api";
 
 export async function executeGetApi(api:string,apiHeaders?:any) : Promise<any>{
     const response :Response= await fetch(api, {

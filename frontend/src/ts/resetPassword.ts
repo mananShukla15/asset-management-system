@@ -1,6 +1,6 @@
-import {IForgetPasswordToken, IResetPassword} from "../functions/interface.ts";
-import {resetPasswordApi} from "../functions/api.ts";
-import {executePostApi} from "./apiExecution.ts";
+import {IForgetPasswordToken, IResetPassword} from "../functions/interface";
+import {resetPasswordApi} from "../functions/api";
+import {executePostApi} from "./apiExecution";
 const commonHeaders  : HeadersInit =  {
     "Content-Type": "application/json",
     "Access-Control-Origin": "*",

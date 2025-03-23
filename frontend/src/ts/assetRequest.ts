@@ -1,8 +1,8 @@
-import {assetRequestApi, assetUpdateStatusApi} from "../functions/api.ts";
-import {IAssetRequest, IAssetRequestStatusUpdate} from "../functions/interface.ts";
-import {executeGetApi, executePostApi} from "./apiExecution.ts";
-import {createTable} from "./tables.ts";
-import {isTokenAvailableOrNot, logout} from "../functions/helperFunctions.ts";
+import {assetRequestApi, assetUpdateStatusApi} from "../functions/api";
+import {IAssetRequest, IAssetRequestStatusUpdate} from "../functions/interface";
+import {executeGetApi, executePostApi} from "./apiExecution";
+import {createTable} from "./tables";
+import {isTokenAvailableOrNot, logout} from "../functions/helperFunctions";
 
 isTokenAvailableOrNot()
 const logoutElement:HTMLElement = document.getElementById("logout")!;
